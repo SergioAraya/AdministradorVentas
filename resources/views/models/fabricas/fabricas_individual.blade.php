@@ -1,15 +1,8 @@
-<!-- resources/views/tasks.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
 
-<!-- Bootstrap Boilerplate... -->
-
 <div class="panel-body">
-    <!-- Display Validation Errors -->
-    @include('common.errors')
-
     @if (isset($fabrica))
     <form action="{{ url('fabricas/'.$fabrica->id) }}" method="POST" class="form-horizontal">
     @else
@@ -86,6 +79,4 @@
         </div>
     </form>
 </div>
-
-<!-- TODO: Current Tasks -->
 @endsection

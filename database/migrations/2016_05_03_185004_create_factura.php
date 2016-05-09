@@ -16,7 +16,7 @@ class CreateFactura extends Migration
             $table->increments('id');
             $table->integer('cliente_id')->unsigned();
             $table->integer('fabrica_id')->unsigned();
-            $table->double('importe_beneficio', 15, 8);
+            $table->double('importe', 15, 8);
             $table->boolean('pagado');
 
             $table->foreign('cliente_id')->references('id')->on('clientes');
@@ -28,7 +28,7 @@ class CreateFactura extends Migration
             array(
                 'cliente_id' => 1,
                 'fabrica_id' => 2,
-                'importe_beneficio' => 220.56,
+                'importe' => 220.56,
                 'pagado' => true
             )
         );
@@ -36,7 +36,7 @@ class CreateFactura extends Migration
             array(
                 'cliente_id' => 2,
                 'fabrica_id' => 1,
-                'importe_beneficio' => 150.12,
+                'importe' => 150.12,
                 'pagado' => false
             )
         );

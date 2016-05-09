@@ -46,10 +46,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="importe_beneficio" class="col-sm-3 control-label">Importe Beneficio</label>
+            <label for="importe" class="col-sm-3 control-label">Importe</label>
             <div class="col-sm-6">
-                <input type="number" step="0.01" name="importe_beneficio" id="importe_beneficio" class="form-control"
-                       value="{{ isset($factura) ? $factura->importe_beneficio : ''}}">
+                <input type="number" step="0.01" name="importe" id="importe" class="form-control"
+                       value="{{ isset($factura) ? $factura->importe : ''}}">
             </div>
         </div>
         <div class="form-group">
@@ -77,6 +77,4 @@
         </div>
     </form>
 </div>
-
-<!-- TODO: Current Tasks -->
 @endsection

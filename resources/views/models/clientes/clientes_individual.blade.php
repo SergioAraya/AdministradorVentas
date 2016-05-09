@@ -1,13 +1,8 @@
-<!-- resources/views/tasks.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
 
-<!-- Bootstrap Boilerplate... -->
-
 <div class="panel-body">
-    <!-- Display Validation Errors -->
     @include('common.errors')
 
     @if (isset($cliente))
@@ -79,6 +74,4 @@
         </div>
     </form>
 </div>
-
-<!-- TODO: Current Tasks -->
 @endsection

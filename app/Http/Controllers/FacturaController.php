@@ -23,22 +23,20 @@ class FacturaController extends Controller
             $facturas = Factura::get();
         }
 
-        $total = $this->sumarFacturas($facturas);
+        $total = 0; $totalBeneficio = 0;
+        foreach($facturas as $factura){
+            $total += $factura->importe;
+            $totalBeneficio += $factura->beneficio();
+        }
 
         return view('models/facturas/facturas', [
             'tipoPeticion' => $tipoPeticion,
             'facturas' => $facturas,
-            'total' => $total
+            'total' => $total,
+            'totalBeneficio' => $totalBeneficio
         ]);
     }
 
-    private function sumarFacturas($facturas){
-        $total = 0;
-        foreach($facturas as $factura){
-            $total += $factura->importe_beneficio;
-        }
-        return $total;
-    }
     public function getOne(Factura $factura){
         return view('models/facturas/facturas_individual', [
             'factura' => $factura,
@@ -73,11 +71,10 @@ class FacturaController extends Controller
     }
 
     private function requestToCliente(Request $request, Factura &$factura){
-
         $factura->cliente_id = $request->cliente_id;
         $factura->fabrica_id = $request->fabrica_id;
-        $factura->importe_beneficio = $request->importe_beneficio;
-        $factura->pagado = $request->pagado;
+        $factura->importe = $request->importe;
+        $factura->pagado = (isset($request->pagado) ? true : false);
         return $factura;
 
     }

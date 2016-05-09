@@ -14,4 +14,8 @@ class Factura extends Model
     public function fabrica(){
         return $this->belongsTo('App\Fabrica');
     }
+    
+    public function beneficio(){
+        return round($this->importe * $this->fabrica->comision / 100, 2);
+    }
 }

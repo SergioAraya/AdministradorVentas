@@ -30,17 +30,14 @@
             </button>
         </form>
         <br>
-
-        <!-- TODO BUSCAR -->
         <table class="table table-striped task-table">
-
-            <!-- Table Headings -->
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Cliente</th>
                     <th>Fabrica</th>
-                    <th>Importe Beneficio</th>
+                    <th>Importe</th>
+                    <th>Beneficio</th>
                     <th>Pagado</th>
                     <th></th>
                     <th></th>
@@ -63,7 +60,10 @@
                     </a>
                 </td>
                 <td class="table-text">
-                    <div>{{ $factura->importe_beneficio }}</div>
+                    <div>{{ $factura->importe }}</div>
+                </td>
+                <td class="table-text">
+                    <div>{{ $factura->beneficio() }}</div>
                 </td>
                 <td class="table-text">
                     <div>{{ $factura->pagado ? 'Sí' : 'No' }}</div>
@@ -88,7 +88,8 @@
             <tr>
                 <td><b>TOTAL:</b></td>
                 <td colspan="2"></td>
-                <td colspan="4"><b>{{ $total }}</b></td>
+                <td><b>{{ $total }}</b></td>
+                <td colspan="4"><b>{{ $totalBeneficio }}</b></td>
             </tr>
             </tbody>
         </table>

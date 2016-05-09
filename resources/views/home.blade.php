@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Create Task Form... -->
 
-<!-- Current Tasks -->
 <div class="panel panel-default">
     <div class="panel-heading">
         Menú
